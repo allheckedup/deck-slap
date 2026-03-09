@@ -20,7 +20,7 @@ const AppRoutes = () => {
 
   return (
     <Routes location={path}>
-      <Route path="/*" element={<UnknownApplication path={path} />} />
+      <Route path="*" element={<UnknownApplication path={path} />} />
     </Routes>
   )
 }

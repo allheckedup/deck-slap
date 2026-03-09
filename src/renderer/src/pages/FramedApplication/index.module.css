@@ -71,7 +71,7 @@ body,
   box-sizing: border-box;
   -webkit-app-region: drag;
   padding: 0 10px 0;
-
+  text-transform: lowercase;
   color: var(--secondary);
   border-bottom: 1px solid var(--secondary);
 
