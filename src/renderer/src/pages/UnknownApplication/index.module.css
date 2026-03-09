@@ -1,11 +1,14 @@
 .applicationRoot {
   --primary: white;
-  --secondary: black;
+  --secondary: darkslategrey;
 }
 
 .header,
 .content {
   padding: 0 10px;
+}
+
+.header {
   display: flex;
   align-items: center;
 }
@@ -21,7 +24,7 @@
   border: 0;
   clear: both;
   display: block;
-  width: 100%;
+  width: calc(100%, 20px);
   margin: 10px;
   background-color: black;
   height: 1px;

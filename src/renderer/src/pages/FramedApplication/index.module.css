@@ -45,6 +45,9 @@ body,
 }
 
 #applicationRoot {
+  --header-frame-size: 25px;
+  --header-actions-primary: white;
+  --resize-border-size: 2px;
   display: grid;
   grid-template-columns: [resize-area-start] var(--resize-border-size) [content-start header-start] 1fr [content-end header-end] var(--resize-border-size) [resize-area-end];
   grid-template-rows: [resize-area-start] var(--resize-border-size) [header-start] var(--header-frame-size) [header-end content-start] 1fr auto [content-end] var(--resize-border-size) [resize-area-end];
@@ -99,10 +102,6 @@ body,
   flex: 1;
   gap: 10px;
   font-weight: bold;
-}
-
-#applicationName {
-  padding-top: 0.125em;
 }
 
 #frameActions {

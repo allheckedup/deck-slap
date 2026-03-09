@@ -6,55 +6,19 @@
   --secondary: darkslategray;
   --tertiary: rgb(238, 238, 238);
 
-  --navbar-primary: rgb(85, 90, 116);
-  --navbar-secondary: rgb(167, 180, 223);
-  --navbar-highlight: rgb(110, 112, 134);
-  --navbar-item-pad: 5px;
-  --navbar-collapse-size: 60px;
-  --navbar-expand-size: 200px;
-  --navbar-icon-size: 40px;
-
-  --navbar-transition-duration: .2s;
-  --navbar-transition-delay: 2s;
-
-  --header-collapse-size: 60px;
-  --header-expand-size: 200px;
-
   --header-primary: ghostwhite;
   --header-frame-size: 25px;
   --header-actions-primary: white;
   --resize-border-size: 2px;
 
-  --content-pad: 10px;
-
-  --font-inter: 'Inter', sans-serif;
-  --font-dmsans: 'DM Sans', sans-serif;
-
-  --card-stack-gap: 10px;
-  --card-width: 200px;
-  --card-ratio-x: 5;
-  --card-ratio-y: 7;
-  --card-ratio: var(--card-ratio-x) / var(--card-ratio-y);
-  --card-height: calc(var(--card-width) * var(--card-ratio-y) / var(--card-ratio-x));
-  --card-header-size: 50px;
-  --card-info-pad: 10px;
-
-  --preview-border-primary: rgb(145, 145, 145);
-  --preview-border-secondary: rgb(136, 136, 177);
-  --preview-primary: rgb(100, 101, 131);
-  --preview-secondary: rgb(185, 185, 185);
-  --preview-shadow: rgb(69, 64, 100);
-  --preview-padding: 6px;
-  --preview-gap: 16px;
-
-
-  font-family: "Inria Serif";
+  font-family: "Inria Serif", serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--secondary);
   background-color: #ffffff00;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -63,6 +27,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
   -moz-osx-font-smoothing: grayscale;
 }
 

@@ -24,7 +24,7 @@ const createWindow = ({
     minHeight: windowSize?.min?.height,
     frame: false,
     roundedCorners: false, // macOS, not working on Windows
-    thickFrame: false,
+    thickFrame: true,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
