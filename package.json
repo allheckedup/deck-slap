@@ -7,7 +7,8 @@
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint --cache .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "test": "vitest",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
@@ -55,6 +56,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "husky": "^9.1.7",
+    "oxlint": "^1.51.0",
     "prettier": "^3.7.4",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
