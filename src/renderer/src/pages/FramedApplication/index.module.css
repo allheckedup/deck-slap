@@ -1,53 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: clip;
-  scroll-behavior: smooth;
-}
-
-#root {
-  /* margin-left: var(--navbar-collapse-size); */
-  /* padding: 10px; */
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-/* Width and height of the scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-/* Background of the scrollbar track */
-::-webkit-scrollbar-track {
-  background: rgb(0, 0, 0, 0);
-}
-
-/* Style of the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Style of the scrollbar thumb when hovered */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 #applicationRoot {
-  --header-frame-size: 25px;
-  --header-actions-primary: white;
-  --resize-border-size: 2px;
   display: grid;
   grid-template-columns: [resize-area-start] var(--resize-border-size) [content-start header-start] 1fr [content-end header-end] var(--resize-border-size) [resize-area-end];
   grid-template-rows: [resize-area-start] var(--resize-border-size) [header-start] var(--header-frame-size) [header-end content-start] 1fr auto [content-end] var(--resize-border-size) [resize-area-end];
@@ -70,35 +21,30 @@ body,
   justify-content: flex-end;
   align-items: center;
   background-color: var(--tertiary);
-  /* border-bottom: var(--resize-border-size) solid var(--secondary); */
   box-sizing: border-box;
   -webkit-app-region: drag;
   padding: 0 10px 0;
   text-transform: lowercase;
   color: var(--secondary);
   border-bottom: 1px solid var(--secondary);
+  background-color: lightgrey;
+}
 
-  & .icon {
-    width: var(--header-frame-size);
-    height: var(--header-frame-size);
-    -webkit-app-region: no-drag !important;
+.icon {
+  width: calc(var(--header-frame-size) - 2px);
+  height: calc(var(--header-frame-size) - 2px);
+  -webkit-app-region: no-drag !important;
+  opacity: 100%;
+  padding: 2px 0;
+
+  &.interactable:not(:hover) {
     opacity: 50%;
-
-    &.static {
-      opacity: 100%;
-    }
-
-    &:hover:not(.static) {
-      opacity: 100%;
-      color: var(--secondary);
-      /* each app is themed differently? */
-    }
   }
 }
 
 #frameTitle {
   display: flex;
-  align-content: center;
+  align-items: center;
   flex: 1;
   gap: 10px;
   font-weight: bold;
@@ -106,7 +52,7 @@ body,
 
 #frameActions {
   display: flex;
-  align-content: center
+  align-items: center
 }
 
 #resizableArea {

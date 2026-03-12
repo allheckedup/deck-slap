@@ -47,14 +47,22 @@ export const FramedApplication = ({
         <div id={styles.frameHeader}>
           <div id={styles.frameTitle}>
             {/* @ts-ignore icon types are wierd enum that isnt exported. not really able to be dynamically done like this */}
-            <DynamicIcon name={icon} className={(styles.icon, styles.static)} />
+            <DynamicIcon name={icon} className={styles.icon} />
             <span id={styles.applicationName}>{name}</span>
           </div>
           <div id={styles.frameActions}>
-            <Minus onClick={api.minimiseApp} className={styles.icon} />
+            <Minus
+              onClick={api.minimiseApp}
+              className={classNames(styles.frameActions, styles.interactable, styles.icon)}
+            />
             <PinActionIcon
               onClick={pinAction}
-              className={classNames(styles.frameActions, styles.pin, styles.icon)}
+              className={classNames(
+                styles.frameActions,
+                styles.interactable,
+                styles.pin,
+                styles.icon
+              )}
             />
           </div>
         </div>

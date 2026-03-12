@@ -1,10 +1,12 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { contextBridge } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 import { windowActions } from './windowActions'
+import { clickThrough } from './clickThrough'
 
 // Custom APIs for renderer
 const api = {
   ...windowActions,
+  ...clickThrough,
   ping: () => console.log('ping')
 }
 
@@ -26,16 +28,3 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.api = api
 }
-
-// IMPORTANT!! This is used to allow transparent portions of apps to be click-through for UX. Means we don't have to dynamically resize the Atom window and can keep any size we wish.
-window.addEventListener('DOMContentLoaded', () => {
-  const bgElem = document.querySelector('.click-through-ignore')
-
-  bgElem?.addEventListener('mouseenter', () => {
-    ipcRenderer.send('set-ignore-mouse-events', false)
-  })
-
-  bgElem?.addEventListener('mouseleave', () => {
-    ipcRenderer.send('set-ignore-mouse-events', true, { forward: true })
-  })
-})

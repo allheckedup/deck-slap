@@ -2,6 +2,8 @@ import { Routes, Route, HashRouter, useSearchParams } from 'react-router-dom'
 import { ErrorBoundary } from 'react-error-boundary'
 import { useMemo } from 'react'
 import { UnknownApplication } from './pages/UnknownApplication'
+import { Tabletop } from './pages/Tabletop'
+import { HandOverlay } from './pages/HandOverlay'
 
 const fallbackRender = ({ error }) => {
   console.log('Something went wrong:', error)
@@ -20,6 +22,8 @@ const AppRoutes = () => {
 
   return (
     <Routes location={path}>
+      <Route path="/tabletop" element={<Tabletop />} />
+      <Route path="/spellbook" element={<HandOverlay />} />
       <Route path="*" element={<UnknownApplication path={path} />} />
     </Routes>
   )
